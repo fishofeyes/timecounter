@@ -1,6 +1,6 @@
 library timercounter;
 
-class TimeCounter {
+class TimerCounter {
   
   int duration;
   /// 定时速度
@@ -11,7 +11,7 @@ class TimeCounter {
     * Examples:
 
     *     class _SmsCounterViewState extends State<SmsCounterView> {
-    *       TimeTool _timer;
+    *       TimeCounter _timer;
     *       int counter = 59;
 
     *     @override
@@ -27,13 +27,13 @@ class TimeCounter {
     *     }
 
     *     void _beginTimer() {
-    *       _timer = TimeTool.begin(duration: 59, callback:(timerCount){ 
+    *       _timer = TimeCounter.begin(duration: 59, callback:(timerCount){ 
     *         // do somthing ...
     *       });
     *     }
     */
-  static TimeCounter begin({int duration, int speed = 1, Function(int count) callback}) {
-    final tool = TimeCounter();
+  static TimerCounter begin({int duration, int speed = 1, Function(int count) callback}) {
+    final tool = TimerCounter();
     tool.duration = duration;
     tool.callback = callback;
     tool._speed = speed;
