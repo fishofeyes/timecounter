@@ -44,8 +44,10 @@ class TimerCounter {
   void _begin() {
     Future.delayed(Duration(seconds: _speed)).then((value) {
       duration -= 1;
-      if(callback != null) callback(duration);
-      if(duration >= 0) _begin();
+      if(duration >= 0){
+        if(callback != null) callback(duration);
+        _begin();
+      }
     });
   }
 
