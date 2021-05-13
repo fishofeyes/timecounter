@@ -1,5 +1,5 @@
 library timercounter;
-
+export 'package:timercounter/timercounter.dart';
 class TimerCounter {
   
   int duration = 60;
